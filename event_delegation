@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: black;
+        }
+
+        h1{
+            color: gray;
+        }
+
+        .parent
+        {
+            position: absolute;
+            top: 270px;
+            left: 500px;
+            font-size: 30px;
+            color:white;
+        }
+
+        li
+        {
+           list-style-type:none;
+           text-align: center;
+           border: 2px solid blue;
+           margin: 13px;
+        }
+
+        .get
+        {
+            margin-top: 20px;
+            color: rgb(255, 0, 179)     ;
+        }
+
+        li:hover{
+            scale: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Delegation</h1>
+    <div class="parent">
+        <p>Which programming language do you like most?</p>
+        <ul id="mylist">
+            <li>🎉Javascript🎉</li>
+            <li>🥳C/c++🥳</li>
+            <li class="py">⭐Python⭐</li>
+            <li>😀Java😀</li>
+        </ul>
+        <p class="get"></p>
+    </div>
+</body>
+<script>
+    const funrun =(event)=>{
+        console.log(event.target);
+        //whatever teh value appears on the console we need to take on the screen 
+       let print= document.querySelector(".get").innerHTML = `your favorite programming language is: ${event.target.innerHTML}`;
+       
+    }
+    document.getElementById("mylist")
+    .addEventListener("click", funrun);
+
+    // if we have to do with event propogation then we have to do one by one function 
+// const pyfun =(e)=>{
+//     console.log(e.target)
+// }
+//     document.querySelector(".py")
+// .addEventListener("click", pyfun);
+
+</script>
+</html>
