@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to joke</title>
+</head>
+
+<style>
+
+    body{
+        background-color: rgb(202, 182, 223);
+    }
+    h1{
+        text-decoration: underline;
+        text-shadow: 2px 0.3px;  
+        position: absolute;
+        /* text-align: center; */
+        top: 70px; 
+        left: 500px;
+        font-size: 50px;
+    }
+
+    div{
+        margin-top: 30px;
+        position: absolute;
+        top: 200px;
+        left: 350px;
+        /* border: 2px solid black; */
+        height: 400px;
+        width: 800px;
+        border-radius: 20px;
+    }
+
+    button{
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        background-color: rgb(20, 17, 18);
+        position: absolute;
+        top: 260px;
+        left: 300px;
+        font-size: 20px;
+    }
+
+    button:hover{
+        background-color: white;
+        color: black;
+        transition: linear;
+    }
+
+    .apidata
+    {
+        font-size: 35px;
+        color: blue;
+        font-family: cursive;
+    }
+    
+</style>
+<body>
+    <h1>The Random Dad's Joke</h1>
+    <div >
+        <section class="apidata"></section>
+        <button id="fetch_data"> GET NEW JOKES</button>
+    </div>
+
+    <script>
+        let api ="https://icanhazdadjoke.com/";
+        
+        const newjoke =()=>
+    {
+        fetch(api ,
+            {
+                headers: {
+                    Accept: "application/json",  //whatever we pass please try to understand in json
+                }
+            })
+          
+
+        .then((res)=>
+    {
+        console.log(res);
+        return res.json();
+    }).then((data)=>
+{
+    console.log(data.joke);
+    jokedata.innerHTML= data.joke;
+
+})
+
+
+       .catch((err)=>
+    {
+        console.log(err);
+    })
+    }
+        document.getElementById("fetch_data").addEventListener("click" , newjoke)
+
+       let jokedata =  document.querySelector(".apidata");
+    </script>
+    
+</body>
+</html>
