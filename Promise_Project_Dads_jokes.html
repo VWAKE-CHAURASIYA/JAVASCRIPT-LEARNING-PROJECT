@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to joke</title>
-</head>
+    <title>Dad's Joke (promises)</title>
 
-<style>
-
+    <style>
+        
     body{
-        background-color: rgb(202, 182, 223);
+        background-color: rgb(226, 135, 220);
     }
     h1{
         text-decoration: underline;
@@ -18,8 +17,9 @@
         position: absolute;
         /* text-align: center; */
         top: 70px; 
-        left: 500px;
+        left: 300px;
         font-size: 50px;
+        
     }
 
     div{
@@ -29,7 +29,7 @@
         left: 350px;
         /* border: 2px solid black; */
         height: 400px;
-        width: 800px;
+        width: auto;
         border-radius: 20px;
     }
 
@@ -39,8 +39,8 @@
         color: white;
         background-color: rgb(20, 17, 18);
         position: absolute;
-        top: 260px;
-        left: 300px;
+        top: 280px;
+        left: 380px;
         font-size: 20px;
     }
 
@@ -50,55 +50,51 @@
         transition: linear;
     }
 
-    .apidata
+    .jokebox
     {
         font-size: 35px;
-        color: blue;
+        margin-top: 30px;
+        color: rgb(233, 14, 14);
         font-family: cursive;
     }
-    
-</style>
+    </style>
+</head>
+
 <body>
-    <h1>The Random Dad's Joke</h1>
-    <div >
-        <section class="apidata"></section>
-        <button id="fetch_data"> GET NEW JOKES</button>
+    <h1>Let's have some Jokes with Dad(using promises)</h1>
+    <div>
+        <section class="jokebox"></section>
+        <button id="getjoke">GET JOKES</button>
     </div>
-
     <script>
-        let api ="https://icanhazdadjoke.com/";
-        
-        const newjoke =()=>
-    {
-        fetch(api ,
-            {
-                headers: {
-                    Accept: "application/json",  //whatever we pass please try to understand in json
-                }
-            })
-          
 
+        const apiurl = "https://icanhazdadjoke.com/";
+        const box= document.querySelector(".jokebox");
+
+        const runapi =()=>
+    {
+        fetch(apiurl , {
+            headers: {
+                Accept: "application/json",
+            }
+        })
         .then((res)=>
     {
-        console.log(res);
+        console.log(res)
         return res.json();
-    }).then((data)=>
+    }).then((newres)=>
 {
-    console.log(data.joke);
-    jokedata.innerHTML= data.joke;
-
+    console.log(newres.joke)
+    box.innerHTML = newres.joke;
 })
-
-
-       .catch((err)=>
-    {
-        console.log(err);
-    })
+    .catch((err)=>
+{
+    console.log(err);
+    box.innerHTML = `API is not able to fetch the data...`;
+})
     }
-        document.getElementById("fetch_data").addEventListener("click" , newjoke)
-
-       let jokedata =  document.querySelector(".apidata");
+        document.getElementById("getjoke").addEventListener("click", runapi)
     </script>
-    
 </body>
+
 </html>
