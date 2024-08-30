@@ -1,0 +1,87 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dad's joke(Async_await)</title>
+    <style>
+        
+    body{
+        background-color: rgb(202, 182, 223);
+    }
+    h1{
+        text-decoration: underline;
+        text-shadow: 2px 0.3px;  
+        position: absolute;
+        /* text-align: center; */
+        top: 70px; 
+        left: 300px;
+        font-size: 50px;
+    }
+
+    div{
+        margin-top: 30px;
+        position: absolute;
+        top: 200px;
+        left: 350px;
+        /* border: 2px solid black; */
+        height: 400px;
+        width: auto;
+        border-radius: 20px;
+    }
+
+    button{
+        border-radius: 10px;
+        padding: 10px;
+        color: white;
+        background-color: rgb(20, 17, 18);
+        position: absolute;
+        top: 260px;
+        left: 380px;
+        font-size: 20px;
+    }
+
+    button:hover{
+        background-color: white;
+        color: black;
+        transition: linear;
+    }
+
+    .apidata
+    {
+        margin-top: 40px;
+        font-size: 35px;
+        color: blue;
+        font-family: cursive;
+    }
+    </style>
+</head>
+<body>
+
+    <h1>Let's have some joke with Dad(Using Async-await)</h1>
+    <div>
+        <section class="apidata"></section>
+        <button id="getapi">GET JOKES</button>
+    </div>
+    
+    <script>
+        let apiurl= "https://icanhazdadjoke.com/"
+        async function getjoke()
+        // const getjoke= async()=>
+        {
+           const res = await fetch(apiurl, {      //whenever we fetch api it will be stored as promise whicih can be used for future session
+            headers: {
+                Accept: "application/json"
+            }
+           })
+           const newres = await res.json();
+           console.log(newres.joke)
+           box.innerHTML = newres.joke;
+            
+        }
+
+       let box =  document.querySelector(".apidata");
+        document.getElementById("getapi").addEventListener("click", getjoke)
+    </script>
+</body>
+</html>
