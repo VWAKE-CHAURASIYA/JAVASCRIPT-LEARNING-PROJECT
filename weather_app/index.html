@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="outerbox">
+
+        <div class="text">
+            <!-- contains 1 icon and search box  -->
+            <form class="weathersearch">
+                <input type="text" class="cityname" placeholder="  Search your city...">
+                <i id="mag" class="fa-solid fa-magnifying-glass"></i>
+            </form>
+        </div>
+
+        <div class="about">
+
+            <h1 class="city"></h1>
+            <p class="date"></p>
+            <div class="weatherdata"></div>
+            <p class="forecast"></p>
+            <div class="icon">
+                <i class="fa-solid fa-umbrella"></i>
+            </div>
+        </div>
+
+        <div class="minmax">
+            <p id="min">Min: 277 &deg;</p>
+            <p id="max">Max: 279 &deg;</p>
+        </div>
+
+        <section class="cards">
+
+            <div class="weathercard">
+                <i class="fa-solid fa-temperature-three-quarters"></i>
+                <p>Feals like : </p>
+                <p class="weatherinfo"></p>
+
+            </div>
+
+            <div class="humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <p>humidity :</p>
+                <p id="humidityinfo">89%</p>
+            </div>
+
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <p>wind :</p>
+                <p id="windinfo">4m/s</p>
+            </div>
+
+            <div class="pressure">
+                <i class="fa-solid fa-arrow-up-from-water-pump"></i>
+                <p>pressure :</p>
+                <p id="pressureinfo">900hpa</p>
+            </div>
+        </section>
+
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
