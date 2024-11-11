@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.intro
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./premium_photo-1661290256778-3b821d52c514.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 40px;
+    display: grid;
+    place-items: center;
+    color: rgb(88, 91, 219);
+
+}
+
+#time
+{
+    font-size: 40px;
+    color: black;
+
+}
+
+.current
+{
+    font-size: 30px;
+    color: hsl(0, 0%, 0%);
+    height: 390px;
+    width: 580px;
+    background-color: rgba(0, 255, 255,0.4);
+    display: grid;
+    place-items: center;
+    border-radius: 30px;
+    
+}
+
+
+.currenttime
+{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./premium_photo-1672115680958-54438df0ab82.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+
+}
+
+.countdown
+{
+   height: 100vh;
+   width: 100%;
+   background-image: url(./automne-paysage-meribel-1920x1080-sylvainaymoz-264.jpg); 
+   background-repeat: no-repeat;
+   background-size: cover;
+   display: grid;
+   place-items: center;
+}
+
+.cdown{
+    display: grid;
+    place-items: center;
+    height: 390px;
+    width:590px;
+    background-color: rgba(0, 0, 255, 0.4);
+    border-radius: 30px;
+    font-size: 40px;
+}
+
+#click
+{
+    scale: 2;
+    border-radius: 20px;
+    width: 170px;
+    cursor: pointer;
+}
+
+#click
+{
+    background-color: black;
+    color: white;
+}
+
+
+.stopwatch
+{
+ background-image: url(./mountains.webp);
+ height: 100vh;
+ width: 100%;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-attachment: fixed;   
+}
+
+
+#watch
+{
+    font-size: 140px;
+    position: absolute;
+    left: 30px;
+
+    
+}
+
+#start , #stop , #restart
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    left: 20px;
+    top: 80vh;
+    margin: 20px;
+    color: white;
+    background-color: black;
+}
+
+#start:hover,#stop:hover,#restart:hover
+{
+    background-color: red;
+    scale: 0.8;
+}
+
+
