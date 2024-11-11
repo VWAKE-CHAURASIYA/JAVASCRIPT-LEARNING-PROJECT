@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY MINI PROJECTS LIST</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <div class="intro">
+            <h1>Welcome to Mini { Time-Based } Project</h1>
+        </div>
+
+        <div class="currenttime">
+            <div class="current">
+                <h1>Current Time</h1>
+                <h1 id="time"></h1>
+            </div>
+        </div>
+
+
+        <div class="countdown">
+             <div class="cdown">
+                <h1 id="countthetimer">5:00</h1>
+                <button id="click">The countdown timer</button>
+             </div>
+        </div>
+
+        <div class="stopwatch">
+            <h1 id="watch">00:00:00</h1>
+            <div class="block">
+               <button id="start" onclick="startwatch()">Start</button>
+               <button id="stop" onclick="stopw()">Stop</button>
+               <button id="restart" onclick="resetwatch()">Restart</button>
+            </div>
+        </div>
+
+
+       
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
