@@ -1,0 +1,61 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-image: linear-gradient(to right, #45d424 , #ad32fe );
+        }
+        
+        main {
+            height: 94vh;
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4rem;
+            
+            
+
+        }
+
+        .btns {
+            display: flex;
+            gap: 4rem;
+        }
+
+        button {
+            padding: 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            border:0;
+            color: white;
+        }
+
+        .btn1{
+            background-color: rgb(69, 212, 36);
+        }
+
+        .btn2{
+            background-color: #ad32fe;
+        }
+
+        .copy
+        {
+            padding: 2rem;
+            background-color: transparent;
+            border-left: 0.2rem solid black;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            color: white;
+        }
+
+        footer{
+            text-align: center;
+            font-weight: 400;
+        }
+    
