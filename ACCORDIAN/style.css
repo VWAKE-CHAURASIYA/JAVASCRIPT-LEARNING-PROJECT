@@ -1,0 +1,79 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Faq
+{
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.accordian
+{
+    background-color: aquamarine;
+    margin: 5rem ;
+    padding: 2rem;
+    line-height: 2.0;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+
+.question
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon
+{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    transition: transform 0.2s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+}
+
+.icon.active
+{
+        transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+}
+
+.answer
+{
+      max-height: 0;
+      /*Hereweusemax-heightsothatallthecontentshouldfixwithjust0lines,whichwefurtherhiddenit,andonlyshow,whenweclickontheaccordian*/overflow:hidden;
+      color: #666;
+      transition: transform 0.2s;
+      -webkit-transition: transform 0.2s;
+      -moz-transition: transform 0.2s;
+      -ms-transition: transform 0.2s;
+      -o-transition: transform 0.2s;
+}
+
+.answer.active{
+    max-height: fit-content;
+    /* HERE WE USE max-height:  AS FIT CONTENT,TO GET FULL CONTENT ; */
+
+    /* NOTE: HERE, WE MUST HAVE TO GIVE THE MAX-HEIGHT VALUES, SO THAT WHENEVER WE PERFORM ANY TRANSITON, IT SHOULD APPEAR, CSS HAS NOT THAT POWER, TO GET A CONTENT WITH A PROPER VALUE, SO WE USE JAVASCRIPT USING SCROLL PROPERTIES, BUT THIS IS ALSO CORRECT WAY... :  */
+}
+
+
